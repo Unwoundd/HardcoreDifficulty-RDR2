@@ -36,14 +36,14 @@
                 isHardcoreOn = false;
                 if (!hideMsg)
                 { Game.DisplayHelp("Hardcore Mode OFF"); }
-                // Values update every tick so the function is not placed here
+                UpdateValues();
             }
             else
             {
                 isHardcoreOn = true;
                 if (!hideMsg)
                 { Game.DisplayHelp("Hardcore Mode ON"); }
-                UpdateValues();
+                // Values update every tick so the function is not placed here
             }
         }
         private static void UpdateValues()
