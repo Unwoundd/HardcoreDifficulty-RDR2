@@ -2,7 +2,7 @@
 (
     name: "Hardcore Mod",
     Author = "Unwound", 
-    Description = "Ride on NPC's horses and vehicles", 
+    Description = "Time to make this game spicy", 
     EntryPoint = "HardcoreMod.EntryPoint.OnEntry", 
     ExitPoint = "HardcoreMod.EntryPoint.OnUnloading"
 )]

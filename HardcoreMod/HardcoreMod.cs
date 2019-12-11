@@ -6,7 +6,7 @@
     internal static class HardcoreMod
     {
         private static bool isDamageModifierOn = false;
-       
+
         public static void Start()
         {
             // Announce us to the world :)
@@ -25,14 +25,15 @@
             ProcessInputs();
 
         }
-    private static void ProcessInputs()
+        private static void ProcessInputs()
         {
 
             if (Game.WasKeyJustPressed(Keys.F2))
             {
                 Player player = Game.LocalPlayer;
 
-                if (isDamageModifierOn){
+                if (isDamageModifierOn)
+                {
                     isDamageModifierOn = false;  //Toggle Off
                     Game.DisplayHelp("Hardcore Disabled!");
                     Game.CallNative<int>("SET_AI_WEAPON_DAMAGE_MODIFIER", 1.0f);
@@ -45,7 +46,7 @@
                     Game.CallNative<int>("SET_AI_WEAPON_DAMAGE_MODIFIER", 3.0f); //Set weapon modifier
                     Game.CallNative<int>("SET_PLAYER_HEALTH_RECHARGE_MULTIPLIER", player, 0.8f); //Set Player Health Recharge Modifier
                 }
-               
+
             }
         }
         public static void End()
