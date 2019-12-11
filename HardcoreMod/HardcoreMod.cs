@@ -9,43 +9,44 @@
 
         public static void Start()
         {
+            SetHardcore(true);
             GameFiber.Sleep(3500);
-            Game.DisplayHelp("Press F2 to toggle Hardcore Mode.\nGood luck!");
+            Game.DisplayHelp("Hardcore Mode is on.\nPress F2 to toggle it.\nGood luck!");
         }
 
         public static void Process()
         {
             if (Game.WasKeyJustPressed(Keys.F2))
             {
-                ToggleHardcore();
+                SetHardcore(!isHardcoreOn);
             }
         }
 
-        private static void ToggleHardcore(bool forceOff = false)
+        private static void SetHardcore(bool state)
         {
             Player player = Game.LocalPlayer;
 
-            if (isHardcoreOn || forceOff)
+            if (state)
             {
                 Game.CallNative("SET_AI_WEAPON_DAMAGE_MODIFIER", 1.0f);
                 Game.CallNative("SET_PLAYER_HEALTH_RECHARGE_MULTIPLIER", player, 1.0f);
                 Game.CallNative("SET_PLAYER_WEAPON_DAMAGE_MODIFIER", player, 1.0f);
-                Game.DisplayHelp("Hardcore Mode OFF");
                 isHardcoreOn = false;
+                Game.DisplayHelp("Hardcore Mode OFF");
             }
             else
             {
                 Game.CallNative("SET_AI_WEAPON_DAMAGE_MODIFIER", 3.0f);
                 Game.CallNative("SET_PLAYER_HEALTH_RECHARGE_MULTIPLIER", player, 0.5f);
                 Game.CallNative("SET_PLAYER_WEAPON_DAMAGE_MODIFIER", player, 1.2f);
-                Game.DisplayHelp("Hardcore Mode ON");
                 isHardcoreOn = true;
+                Game.DisplayHelp("Hardcore Mode ON");
             }
         }
 
         public static void End()
         {
-            ToggleHardcore(forceOff: true);
+            SetHardcore(false);
         }
     }
 }
