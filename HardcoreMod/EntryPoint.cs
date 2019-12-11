@@ -2,7 +2,7 @@
 (
     name: "Hardcore Mod",
     Author = "Unwound", 
-    Description = "Time to make this game spicy", 
+    Description = "Game modifications to increase difficulty", 
     EntryPoint = "HardcoreMod.EntryPoint.OnEntry", 
     ExitPoint = "HardcoreMod.EntryPoint.OnUnloading"
 )]

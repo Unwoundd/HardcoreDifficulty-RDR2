@@ -44,7 +44,7 @@
                     isDamageModifierOn = true; //Toggle on
                     Game.DisplayHelp("Hardcore Enabled!");
                     Game.CallNative("SET_AI_WEAPON_DAMAGE_MODIFIER", 3.0f); //Set weapon modifier
-                    Game.CallNative("SET_PLAYER_HEALTH_RECHARGE_MULTIPLIER", player, 0.1f); //Set Player Health Recharge Modifier
+                    Game.CallNative("SET_PLAYER_HEALTH_RECHARGE_MULTIPLIER", player, 0.75f); //Set Player Health Recharge Modifier
                 }
 
             }
