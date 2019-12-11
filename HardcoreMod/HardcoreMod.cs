@@ -20,6 +20,11 @@
             {
                 SetHardcore(!isHardcoreOn);
             }
+            
+            if (isHardcoreOn)
+            {
+                UpdateValues();
+            }
         }
 
         private static void SetHardcore(bool state, bool hideMsg = false)
@@ -28,19 +33,32 @@
 
             if (state)
             {
-                Game.CallNative("SET_AI_WEAPON_DAMAGE_MODIFIER", 1.0f);
-                Game.CallNative("SET_PLAYER_HEALTH_RECHARGE_MULTIPLIER", player, 1.0f);
-                Game.CallNative("SET_PLAYER_WEAPON_DAMAGE_MODIFIER", player, 1.0f);
                 isHardcoreOn = false;
-                if (!hideMsg) { Game.DisplayHelp("Hardcore Mode OFF"); }
+                if (!hideMsg)
+                { Game.DisplayHelp("Hardcore Mode OFF"); }
+                // Values update every tick so the function is not placed here
             }
             else
+            {
+                isHardcoreOn = true;
+                if (!hideMsg)
+                { Game.DisplayHelp("Hardcore Mode ON"); }
+                UpdateValues();
+            }
+        }
+        private static void UpdateValues()
+        {
+            if (isHardcoreOn)
             {
                 Game.CallNative("SET_AI_WEAPON_DAMAGE_MODIFIER", 3.0f);
                 Game.CallNative("SET_PLAYER_HEALTH_RECHARGE_MULTIPLIER", player, 0.5f);
                 Game.CallNative("SET_PLAYER_WEAPON_DAMAGE_MODIFIER", player, 1.2f);
-                isHardcoreOn = true;
-                if (!hideMsg) { Game.DisplayHelp("Hardcore Mode ON"); }
+            }
+            else
+            {
+                Game.CallNative("SET_AI_WEAPON_DAMAGE_MODIFIER", 1.0f);
+                Game.CallNative("SET_PLAYER_HEALTH_RECHARGE_MULTIPLIER", player, 1.0f);
+                Game.CallNative("SET_PLAYER_WEAPON_DAMAGE_MODIFIER", player, 1.0f);
             }
         }
 
