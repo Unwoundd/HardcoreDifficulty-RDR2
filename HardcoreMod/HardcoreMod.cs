@@ -36,15 +36,15 @@
                 {
                     isDamageModifierOn = false;  //Toggle Off
                     Game.DisplayHelp("Hardcore Disabled!");
-                    Game.CallNative<int>("SET_AI_WEAPON_DAMAGE_MODIFIER", 1.0f);
-                    Game.CallNative<int>("SET_PLAYER_HEALTH_RECHARGE_MULTIPLIER", player, 1.0f);
+                    Game.CallNative("SET_AI_WEAPON_DAMAGE_MODIFIER", 1.0f);
+                    Game.CallNative("SET_PLAYER_HEALTH_RECHARGE_MULTIPLIER", player, 1.0f);
                 }
                 else
                 {
                     isDamageModifierOn = true; //Toggle on
                     Game.DisplayHelp("Hardcore Enabled!");
-                    Game.CallNative<int>("SET_AI_WEAPON_DAMAGE_MODIFIER", 3.0f); //Set weapon modifier
-                    Game.CallNative<int>("SET_PLAYER_HEALTH_RECHARGE_MULTIPLIER", player, 0.8f); //Set Player Health Recharge Modifier
+                    Game.CallNative("SET_AI_WEAPON_DAMAGE_MODIFIER", 3.0f); //Set weapon modifier
+                    Game.CallNative("SET_PLAYER_HEALTH_RECHARGE_MULTIPLIER", player, 0.1f); //Set Player Health Recharge Modifier
                 }
 
             }
