@@ -51,6 +51,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /y C:\Development\HardcoreMod\HardcoreMod\bin\Debug\HardcoreMod.dll  "O:\Games\steamapps\common\Red Dead Redemption 2\C#Plugins\HardcoreMod.dll"</PostBuildEvent>
+    <PostBuildEvent>post_build.bat</PostBuildEvent>
   </PropertyGroup>
 </Project>

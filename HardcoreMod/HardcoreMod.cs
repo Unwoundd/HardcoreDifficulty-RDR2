@@ -2,7 +2,6 @@
 {
     using System.Windows.Forms;
     using Rage;
-
     internal static class HardcoreMod
     {
         private static bool isDamageModifierOn = false;
