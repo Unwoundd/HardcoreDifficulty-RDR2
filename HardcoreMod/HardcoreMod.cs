@@ -9,11 +9,12 @@
         public static void Start()
         {
             // Announce us to the world :)
+            GameFiber.Sleep(3500);
             Game.DisplayHelp("Welcome to hardcore mod! Version 0.1");
             GameFiber.Sleep(6000);
             Game.DisplayHelp("Hit F2 to toggle Hardcore Mode!");
             GameFiber.Sleep(6000);
-            Game.DisplayHelp("Good luck! - Unwound & Vesdii");
+            Game.DisplayHelp("Good luck! - Developed by Unwound & Vesdii");
         }
 
         public static void Process()
