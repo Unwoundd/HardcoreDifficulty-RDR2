@@ -2,7 +2,7 @@
 
 The goal of this mod is to provide an experience that is more challenging and satisfying than the vanilla Red Dead Redemption 2 game.
 We accomplish this by modifying several in game values such as the damage taken, damage dealt, health regeneration and more.
-Updates with more mechanic and interesting modifications are to come soon.
+Updates with more mechanics and interesting modifications are soon to come.
 
 ## Installation
 1. Download [RAGE Plugin Hook](http://ragepluginhook.net/Downloads.aspx) for RDR2
@@ -16,7 +16,7 @@ If the mod loaded successfully, you will see it notified in the top left corner 
 
 ### You can hit F2 to toggle the mod on and off.
 
-**In order for the hook to work, make sure you have overlays such as FRAPS and Rivatuner disabled.**
+**In order for the hook to work, make sure you have overlays such as FRAPS and RivaTuner disabled.**
 
 To update, replace the DLL in C#Plugins.
 
@@ -24,4 +24,3 @@ To update, replace the DLL in C#Plugins.
 - Lowered maximum ammo
 - Ammo drops must be looted from bodies, instead of simply walking over them
 - Health and Stamina Cores deplete faster
-
