@@ -1,5 +1,6 @@
 # Hardcore Difficulty Mod for Red Dead Redemption 2 
 
+## [Featured on NexusMods](https://www.nexusmods.com/reddeadredemption2/mods/135)
 The goal of this mod is to provide an experience that is more challenging and satisfying than the vanilla Red Dead Redemption 2 game.
 We accomplish this by modifying several in game values such as the damage taken, damage dealt, health regeneration and more.
 Updates with more mechanics and interesting modifications are soon to come.
