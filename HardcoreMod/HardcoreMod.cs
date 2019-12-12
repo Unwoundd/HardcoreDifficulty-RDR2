@@ -36,7 +36,6 @@
                 isHardcoreOn = true;
                 if (!hideMsg)
                 { Game.DisplayHelp("Hardcore Mode ON"); }
-                // Values update every tick so the function is not placed here
             }
             else
             {
@@ -54,7 +53,7 @@
             if (isHardcoreOn)
             {
                 Game.CallNative("SET_AI_WEAPON_DAMAGE_MODIFIER", 3.0f);
-                Game.CallNative("SET_PLAYER_HEALTH_RECHARGE_MULTIPLIER", player, 0.6f);
+                Game.CallNative("SET_PLAYER_HEALTH_RECHARGE_MULTIPLIER", player, 0.5f);
                 Game.CallNative("SET_PLAYER_WEAPON_DAMAGE_MODIFIER", player, 1.2f);
             }
             else
