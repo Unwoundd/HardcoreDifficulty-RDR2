@@ -11,7 +11,7 @@
         {
             SetHardcore(true, true);
             GameFiber.Sleep(4000);
-            Game.DisplayHelp("Hardcore Mod v0.1\n- Unwound & Vesdii");
+            Game.DisplayHelp("Hardcore Mod v0.1\nBy Unwound & Vesdii");
             GameFiber.Sleep(3000);
             Game.DisplayHelp("Hardcore Mode is on.\nPress F2 to toggle it.\nGood luck!");
         }
