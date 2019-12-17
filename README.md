@@ -2,14 +2,14 @@
 
 ## [Featured on NexusMods](https://www.nexusmods.com/reddeadredemption2/mods/135)
 The goal of this mod is to provide an experience that is more challenging and satisfying than the vanilla Red Dead Redemption 2 game.
-We accomplish this by modifying several in game values such as the damage taken, damage dealt, health regeneration and more.
+We accomplish this currently by modifying the damage taken, damage dealt, and health regeneration.
 Updates with more mechanics and interesting modifications are soon to come.
 
 ## Installation
 1. Download [RAGE Plugin Hook](http://ragepluginhook.net/Downloads.aspx) for RDR2
 2. Extract the contents into your game directory, where RDR2.exe is
 3. Create a folder in the game directory called C#Plugins
-4. Extract HardcoreMod.dll and place it into C#Plugins
+4. Extract HardcoreDiff.dll and place it into C#Plugins
 5. Launch RDR2
 6. Run RAGEPluginHook.exe from the game directory
 
@@ -25,3 +25,4 @@ To update, replace the DLL in C#Plugins.
 - Lowered maximum ammo
 - Ammo drops must be looted from bodies, instead of simply walking over them
 - Health and Stamina Cores deplete faster
+- No bullet trails
