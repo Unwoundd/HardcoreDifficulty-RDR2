@@ -3,7 +3,7 @@
     using System.Windows.Forms;
 
     internal static class HardcoreDiff {
-        private const string modVersion = "0.2";
+        private const string modVersion = "1.2";
         private const float multDamageTaken = 4.0f;
         private const float multHealthRecharge = 0.05f;
         private const float multWeaponDamage = 1.2f;
