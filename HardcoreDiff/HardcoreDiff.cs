@@ -3,18 +3,18 @@
     using System.Windows.Forms;
 
     internal static class HardcoreDiff {
-        private static bool isHardcoreOn = false;
+        private const string modVersion = "0.2";
         private const float multDamageTaken = 4.0f;
         private const float multHealthRecharge = 0.05f;
         private const float multWeaponDamage = 1.2f;
+        private static bool isHardcoreOn = false;
+        private static bool isRespawning = false;
         private static float lastHealth = 0.0f;
 
         public static void Start() {
             SetHardcore(true, true);
-            GameFiber.Sleep(4000);
-            Game.DisplayHelp("Hardcore Difficulty v0.2.E2\nBy Unwound & Vesdii");
-            GameFiber.Sleep(4000);
-            Game.DisplayHelp("Hardcore Mode is on.\nPress F2 to toggle it.\nGood luck!");
+            GameFiber.Sleep(3000);
+            Game.DisplayHelp("Hardcore Mode is ON.\nPress F2 to toggle it.\nv" + modVersion);
         }
 
         public static void Process() {
@@ -25,12 +25,34 @@
             if (isHardcoreOn) {
                 UpdateValues();
 
-                Ped playerPed = Game.LocalPlayer.Character;
-                if (playerPed.Health < lastHealth) {
-                    playerPed.Health = lastHealth - ((lastHealth - playerPed.Health) * multDamageTaken);
+                Ped plyr = Game.LocalPlayer.Character;
+
+                // Increase damage taken
+                if (plyr.Health < lastHealth) {
+                    plyr.Health = lastHealth - ((lastHealth - plyr.Health) * multDamageTaken);
                 }
-                lastHealth = playerPed.Health;
+                lastHealth = plyr.Health;
+
+                // Drain cores on respawn in free roam
+                if (!Game.IsMissionActive) {
+                    if (isRespawning) {
+                        GameFiber.Sleep(10000);
+                        plyr.HealthCore = 0;
+                        plyr.StaminaCore = 0;
+                        plyr.DeadEyeCore = 0;
+                        isRespawning = false;
+                    } else if (plyr.IsDead) {
+                        isRespawning = true;
+                    }
+                }
             }
+
+            // Testing zone
+            //if (Game.WasKeyJustPressed(Keys.F8)) {
+            //    Ped plyr = Game.LocalPlayer.Character;
+
+            //    plyr.Kill();
+            //}
         }
 
         private static void SetHardcore(bool state, bool hideMsg = false) {
